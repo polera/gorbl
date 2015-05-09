@@ -1,7 +1,7 @@
 # gorbl
 Real-time Blackhole List (RBL) lookups for Golang.
 
-[![GoDoc](https://godoc.org/github.com/polera/gorbl?status.svg)](https://godoc.org/github.com/polera/gorbl)
+[![GoDoc](https://godoc.org/github.com/polera/gorbl?status.svg)](https://godoc.org/github.com/polera/gorbl)  [![Build Status](https://travis-ci.org/polera/gorbl.svg?branch=master)](https://travis-ci.org/polera/gorbl)
 
 Author
 ==
