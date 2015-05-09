@@ -1,12 +1,13 @@
 /*
-Package gorbl lets you perform RBL (Real-time Blackhole List - https://en.wikipedia.org/wiki/DNSBL) lookups using Golang
+Package gorbl lets you perform RBL (Real-time Blackhole List - https://en.wikipedia.org/wiki/DNSBL)
+lookups using Golang
 
 This package takes inspiration from a similar module that I wrote in Python
 (https://github.com/polera/rblwatch).
 
 gorbl takes a simpler approach:  Basic lookup capability is provided by the
-lib, while, unlike in rblwatch, concurrent lookups and the lists on which to
-search are left to those using the lib.
+lib.  Unlike in rblwatch, concurrent lookups and the lists to search are
+left to those using the lib.
 
 JSON annotations on the types are provided as a convenience.
 */
@@ -66,7 +67,6 @@ func Reverse(ip net.IP) string {
 }
 
 func query(rbl string, host string, r *Result) {
-	//	r := Result{}
 	r.Listed = false
 
 	lookup := fmt.Sprintf("%s.%s", host, rbl)
