@@ -1,5 +1,5 @@
 /*
-gorbl lets you perform RBL (Real-time Blackhole List - https://en.wikipedia.org/wiki/DNSBL) lookups using Golang
+Package gorbl lets you perform RBL (Real-time Blackhole List - https://en.wikipedia.org/wiki/DNSBL) lookups using Golang
 
 This package takes inspiration from a similar module that I wrote in Python
 (https://github.com/polera/rblwatch).
@@ -49,7 +49,7 @@ type Result struct {
 }
 
 /*
-Reverses the octets of a given IPv4 address
+Reverse the octets of a given IPv4 address
 64.233.171.108 becomes 108.171.233.64
 */
 func Reverse(ip net.IP) string {
@@ -90,11 +90,11 @@ func query(rbl string, host string, r *Result) {
 /*
 Lookup performs the search and returns the RBLResults
 */
-func Lookup(rbl_list string, target_host string) (r RBLResults) {
-	r.List = rbl_list
-	r.Host = target_host
+func Lookup(rblList string, targetHost string) (r RBLResults) {
+	r.List = rblList
+	r.Host = targetHost
 
-	if ip, err := net.LookupIP(target_host); err == nil {
+	if ip, err := net.LookupIP(targetHost); err == nil {
 		for _, addr := range ip {
 			if addr.To4() != nil {
 				res := Result{}
@@ -102,7 +102,7 @@ func Lookup(rbl_list string, target_host string) (r RBLResults) {
 
 				addr := Reverse(addr)
 
-				query(rbl_list, addr, &res)
+				query(rblList, addr, &res)
 
 				r.Results = append(r.Results, res)
 
