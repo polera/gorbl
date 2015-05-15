@@ -9,7 +9,7 @@ James Polera <james@uncryptic.com>
 
 Dependencies
 ==
-No external dependencies.  Uses Go's standard pacakges
+No external dependencies.  Uses Go's standard packages
 
 Example
 ==
